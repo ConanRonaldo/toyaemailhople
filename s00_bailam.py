@@ -33,5 +33,11 @@ get_name_in_email([None, 'abb#ccc'])                      | ['ERROR invaid email
 
 #region bailam
 def get_name_in_email(email_list):
-  pass#TODO
+  name = []
+  for item in email_list:
+    if item is None or '@' not in item:
+      name.append('ERROR invaid email')
+    else:
+      name.append(item.split('@')[0])
+  return name
 #endregion bailam
